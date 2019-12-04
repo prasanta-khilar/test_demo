@@ -1,0 +1,34 @@
+<bean id="obj1" class="A"/>
+<bean id="obj2" class="A"/>
+it's executing fine or not ?
+
+If not 
+two database having same class i.e JDBCTemplate
+and two different references
+how it is work
+
+
+throwable:
+You can use it in a catch clause, but you should never do it! If you use Throwable in a catch clause, it will not only catch all exceptions; it will also catch all errors. Errors are thrown by the JVM to indicate serious problems that are not intended to be handled by an application.
+
+right:
+  try{
+            int s = 1/0;
+            System.out.println("try block");
+        }catch(Exception ex){
+            System.out.println("exception");
+        }catch(Throwable e){
+            System.out.println("catch throwable");
+        }
+		
+Wrong:
+		  try{
+            int s = 1/0;
+            System.out.println("try block");
+        }catch(Throwable e){
+            System.out.println("catch throwable");
+        }catch(Exception ex){
+            System.out.println("exception");
+        }
+		
+		https://javaconceptoftheday.com/sort-array-elements-by-frequency-in-java/?fbclid=IwAR0XE46UHEdnzZgreoryqRDgCLfO7JAH8XZMe4c_Ay9apteWWGGSPakHOX8
